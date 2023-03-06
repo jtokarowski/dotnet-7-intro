@@ -25,9 +25,10 @@ jobs:
       - name: Build with dotnet
         run: dotnet build --configuration Release
 
-      - name: dotnet migrate db
+      - name: dotnet install ef
         run: dotnet tool install -g dotnet-ef
-        run: dotnet ef migrations add InitialCreate
+
+      - name: dotnet update db
         run: dotnet ef database update
 
       - name: dotnet publish

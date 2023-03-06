@@ -26,6 +26,21 @@ namespace RazorPagesMovie.Migrations
                 {
                     table.PrimaryKey("PK_Movie", x => x.Id);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "Restaurant",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(type: "TEXT", nullable: true),
+                    VisitDate = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    Cuisine = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Restaurant", x => x.Id);
+                });
         }
 
         /// <inheritdoc />
@@ -33,6 +48,9 @@ namespace RazorPagesMovie.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Movie");
+
+            migrationBuilder.DropTable(
+                name: "Restaurant");
         }
     }
 }

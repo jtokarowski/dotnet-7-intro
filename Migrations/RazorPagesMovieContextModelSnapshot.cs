@@ -39,6 +39,26 @@ namespace RazorPagesMovie.Migrations
 
                     b.ToTable("Movie");
                 });
+
+            modelBuilder.Entity("RazorPagesMovie.Models.Restaurant", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Cuisine")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("VisitDate")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Restaurant");
+                });
 #pragma warning restore 612, 618
         }
     }
